@@ -1,0 +1,105 @@
+<html>
+  <head> 
+    <script>
+      let quoteList = [
+        "I felt like a cellophane wrapper on a pack of cigarettes. I felt like I had absolutely no secrets from the world.",
+        "The garden is exploding, a riot of flowers and bees, the small space seeming taller than it is wide.",
+        "How we spend our days is, of course, how we spend our lives."
+      ];
+
+      let authorList = [
+        "Joni Mitchell",
+        "Lorde",
+        "Annie Dillard"
+      ];
+
+      function getRandomInt() {
+        return Math.floor(Math.random() * quoteList.length);
+      }
+
+       window.onload = initialState;
+        function initialState () {
+        let chosenNumber = getRandomInt()
+        document.getElementById("text").innerText = quoteList[chosenNumber];
+        document.getElementById("author").innerText = authorList[chosenNumber];
+      }
+
+     
+      function randomQuote() {
+        let chosenNumber = getRandomInt()
+        document.getElementById("text").innerText = quoteList[chosenNumber];
+        document.getElementById("author").innerText = authorList[chosenNumber];
+      }
+
+      var chosenNumber = quotes[Math.floor(Math.random()*quotes.length)];
+      var chosenQuote = (quoteList[chosenNumber]);
+      var chosenAuthor = (authorList[chosenNumber]);      
+    </script>
+  </head>
+
+  <style>
+    * {
+      font-family:'Courier New', Courier, monospace;
+      font-weight: lighter;
+      
+    }
+
+
+    #quote-box {
+      
+      height:500px;
+      margin:auto;
+      width: auto;
+      position:absolute;
+    }
+     
+    #text {
+      font-size: 180%;
+      font-weight: bold;
+      justify-content: center;
+      background-color: goldenrod;
+      text-align: center;
+      backdrop-filter: blur(10px);
+
+      
+    }
+
+    #author {
+      font-style: italic;
+      font-size: 100%;
+      font-weight: lighter;
+      justify-content: center;
+      background-color: goldenrod;
+      text-align: center;
+      
+    }
+
+    #new-quote {
+      font-size: 3vw;
+      font-weight: bold;
+      background-color:goldenrod;
+
+    }
+    #tweet-quote {
+      font-size: 1.5vw;
+      font-weight: bold;
+      color:goldenrod;
+      background-color: white;
+    }
+
+
+  </style>
+
+  <div>
+   <div class="wrapper" id="quote-box"> 
+    <div id="text"></div>
+    <div id="author"></div>
+    <div id="new-quote"> <button onClick="randomQuote()">New Quote</button></div>
+    <br>
+    <a href="https://twitter.com/intent/tweet?text=I%20did%20this%20myself" target="_blank" id="tweet-quote">Tweet this quote!</a>
+   </div>
+  </div>
+   </body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
